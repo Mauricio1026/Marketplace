@@ -1,6 +1,6 @@
 <?php
 
-include ("./ConexionBase/conexiondb.php");
+include ("../ConexionBase/conexiondb.php");
 
 $Id=$_GET["Id"];
 //construyo la sentencia SQL, para borrar el argumento que recibo por la URL desde el formulario

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="Css/estilo.css">
 </head>
 
 <body>
@@ -40,6 +40,7 @@
                 </td>
             </tr>
         </table>
+        <br>
         <center><a href="Home.php"><button style='width:100px; height:50px'>INICIO</button></a></center>
     </center>
 </body>

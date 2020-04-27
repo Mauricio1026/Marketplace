@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Update</title>
-  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link rel="stylesheet" type="text/css" href="../Css/estilo.css">
 </head>
 
 <body>
@@ -13,24 +13,18 @@
 
   <!--Recupero los valores que esta pasando el formulario-->
   <?php
-  include("./ConexionBase/Conexiondb.php");
-  /*Cuando la página se carga pro primera vez la información se recupera con GET, pero una vez esta
-cargada y se pulsa el botón de actualizar, esta información no debe leerse, por que la información 
-se pasa por post, para evitar que al presionar actualizar los datos se vuelvan a leer lo metemos en un if*/
+  include("../ConexionBase/Conexiondb.php");
 
-  if (!isset($_POST["bot_actualizar"])) { //si no ha pulsado el boton actualizar, ejecutar instrucciones del if
 
+  if (!isset($_POST["bot_actualizar"])) {
 
     $Id = $_GET["Id"];
     $desc = $_GET["descrip"];
-    //$apell=$_GET["apell"];
-    //$dir=$_GET["dir"];
     $fot = $_GET["fot"];
     $fech = $_GET["fech"];
     $cap = $_GET["cap"];
     $prec = $_GET["prec"];
-  } else { //en caso que si haya pulsado el botón actualizar
-    //El Id no lo muestra pero lo requiero como criterio en la sentencia SQL
+  } else {
 
     echo "entre al else";
     $Id = $_POST["Id"];
@@ -83,7 +77,7 @@ se pasa por post, para evitar que al presionar actualizar los datos se vuelvan a
         <td>Precio</td>
         <td><label for="prec"></label>
           <input type="text" name="prec" id="prec" value="<?php echo $prec ?>" </td> </tr> <tr>
-        <!--Este botón cuando se pulsa, los datos son enviados a la misma página para actulizar el registro-->
+          <!--Este botón cuando se pulsa, los datos son enviados a la misma página para actulizar el registro-->
         <td colspan="2"><input type="submit" name="bot_actualizar" id="bot_actualizar" value="Actualizar"></td>
       </tr>
     </table>

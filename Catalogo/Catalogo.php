@@ -5,18 +5,13 @@
     <meta charset="utf-8">
     <title>marketplace</title>
     <!--llama la hoja de estilos-->
-    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="../Css/estilo.css">
 </head>
 
 <body>
 
     <?php
-    include("./ConexionBase/conexiondb.php");
-    /*ejecutamos una consulta SQL que nos muestre todos los registros 
-    de datos_ususarios y los almacena en un array $conexión
-    $conexion=$conexion_db->query("SELECT * FROM DATOS_USUARIOS");//RESULSET
-    //Almaceno el resulset en un array de objetos $registros
-    $registros=$conexion->fetchAll(PDO::FETCH_OBJ)//Empleo este parametro para manejar un array de objetos*/
+    include("../ConexionBase/Conexiondb.php");
 
     $registros = $conexion_db->query("SELECT * FROM CATALOGO")->fetchAll(PDO::FETCH_OBJ);
 
@@ -33,7 +28,7 @@
         $SQL = "INSERT INTO CATALOGO (NOMBRE, DESCRIPCION, FOTO, FECHA, CAPACIDAD, PRECIO) VALUES (:nombre, :descripcion, :foto, :fecha, :capacidad,:precio)";
         $Resultado = $conexion_db->prepare($SQL);
         $Resultado->execute(array(":nombre" => $nom, ":descripcion" => $desc, ":foto" => $fot, ":fecha" => $fech, ":capacidad" => $cap, ":precio" => $prec));
-        header("Location:index.php");
+        header("Location:Catalogo.php");
     }
 
     ?>
@@ -107,7 +102,7 @@
             </tr>
         </table>
     </Form>
-    <center><a href="Home.php"><button  style='width:100px; height:50px'>INICIO</button></a></center>
+    <center><a href="../Home.php"><button  style='width:100px; height:50px'>INICIO</button></a></center>
     <p>&nbsp;</p>
 </body>
 
