@@ -41,6 +41,16 @@
                     <br>
                     <a href="Contacto/Contacto.php"><button>Contactenos</button></a>
                 </td>
+                <td>
+                    <FONT FACE="arial" SIZE=5 COLOR="black">Inicio De Sesion</FONT>
+                    <br>
+                    <a href="Inicio_De_Sesion/index.php"><button>Login</button></a>
+                </td>
+                <td>
+                    <FONT FACE="arial" SIZE=5 COLOR="black">Reservas Turisticas</FONT>
+                    <br>
+                    <a href="Reserva/Reservas.php"><button>Reservas</button></a>
+                </td>
             </tr>
         </table>
     </center>
