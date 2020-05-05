@@ -6,4 +6,4 @@
  ANDRES FELIPE RODRIGUEZ DE LA ROSA
  JEISSON MAURICIO MONTERO MELO
  Asignatura:
- Diseño de algoritmos y Arquitectura de datos   
+ Sistemas Transaccionales y Arquitectura de datos   
