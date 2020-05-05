@@ -12,13 +12,13 @@
     <center>
         <table>
             <tr>
-                <td colspan="3">
+                <td colspan="5">
                     <FONT FACE="impact" SIZE=6 COLOR="black">Market Place</FONT>
                 </td>
 
             </tr>
             <tr>
-                <td  colspan="3">
+                <td colspan="5">
                     <FONT FACE="arial" SIZE=2 COLOR="black">
                         Esta es un pequeña pagina web de prueba en la cual se puede evidenciar la interfaz
                         en la cual puede realizar un simulador de una pagina de reservas de paquetes turirstico.
@@ -27,18 +27,19 @@
             </tr>
             <tr>
                 <td>
-                    <FONT FACE="arial" SIZE=5 COLOR="black">Inscripción Usuario</FONT>
-                    <br>
-                    <a href="Registrousuario/registro.php"><button>Inscripción</button></a>
+                    <a href="Home.php"><button>Inicio</button></a>
                 </td>
                 <td>
-                    <FONT FACE="arial" SIZE=5 COLOR="black">Paquetes turisticos</FONT>
-                    <br>
                     <a href="Catalogo/Catalogo.php"><button>Catalogo</button></a>
                 </td>
                 <td>
-                    <FONT FACE="arial" SIZE=5 COLOR="black">Contactenos</FONT>
-                    <br>
+                    <a href="Reserva.php"><button>Reserva</button></a>
+                </td>
+                <td>
+                    <a href="Registrousuario/registro.php"><button>Inscripción</button></a>
+                </td>
+
+                <td>
                     <a href="Contacto/Contacto.php"><button>Contactenos</button></a>
                 </td>
             </tr>
