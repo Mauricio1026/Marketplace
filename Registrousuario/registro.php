@@ -7,6 +7,39 @@
 	<!--llama la hoja de estilos-->
 	<link rel="stylesheet" type="text/css" href="../Css/estilo.css">
 </head>
+<style type="text/css">
+	.boton_login {
+		text-decoration: none;
+		padding: 5px;
+		font-weight: 600;
+		font-size: 20px;
+		color: #ffffff;
+		background-color: #000000;
+		border-radius: 6px;
+		border: 1px solid #0016b0;
+	}
+
+	.boton_login:hover {
+		color: #000000;
+		background-color: #ffffff;
+	}
+
+	.button {
+		text-decoration: none;
+		padding: 5px;
+		border-radius: 6px;
+		font-weight: 600;
+		font-size: 20px;
+		background-color: white;
+		color: black;
+		border: 2px solid #555555;
+	}
+
+	.button:hover {
+		background-color: #555555;
+		color: white;
+	}
+</style>
 
 <body>
 
@@ -44,7 +77,42 @@
 	}
 
 	?>
+	<table align="center">
+		<tr>
+			<td colspan="5">
+				<FONT FACE="Delninoys" SIZE=10 COLOR="black">Market Place</FONT>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<h3>
+					Bienvenido al sitio web de <strong>MARKETPLACE</strong> en este puede realizar la reserva de diversos productos
+				</h3>
+			</td>
+			<td>
+				<a class="boton_login" href="../Registrousuario/index.php">Login</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a class="button" href="../Home.php">Inicio</a>
+			</td>
+			<td>
+				<a class="button" href="../Catalogo/Catalogo.php">Catalogo</a>
+			</td>
+			<td>
+				<a class="button" href="../Reserva.php">Reserva</a>
+			</td>
+			<td>
+				<a class="button" href="registro.php">Inscripción</a>
+			</td>
 
+			<td>
+				<a class="button" href="../Contacto/Contacto.php"> Contactenos</a>
+			</td>
+
+		</tr>
+	</table>
 	<center>
 		<h1>FORMULARIO DE REGISTRO USUARIO</h1>
 	</center>
@@ -101,12 +169,13 @@
 				<td><input type='password' name='pass2' size='30' class='centrado' required></td>
 			</tr>
 			<tr>
-				<td class='bot'><input type='submit' name='cr' id='cr' value='Enviar' required></td>
-			</tr>
+				<td class='bot' colspan="2">
+					<center><input class="button" type='submit' name='cr' id='cr' value='Enviar' required></center>
+				</td>
 
+			</tr>
 		</table>
 	</Form>
-	<center><a href="../Home.php"><button style='width:100px; height:50px'>INICIO</button></a></center>
 </body>
 
 </html>

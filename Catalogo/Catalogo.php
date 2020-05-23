@@ -6,7 +6,40 @@
     <title>marketplace</title>
     <link rel="stylesheet" type="text/css" href="../Css/estilo.css">
 </head>
+<style type="text/css">
+    .boton_login {
+        text-decoration: none;
+        padding: 5px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #000000;
+        border-radius: 6px;
+        border: 1px solid #0016b0;
+    }
 
+    .boton_login:hover {
+        color: #000000;
+        background-color: #ffffff;
+    }
+
+    .button {
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 20px;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+    }
+
+    .button:hover {
+        background-color: #555555;
+        color: white;
+    }
+
+</style>
 <body>
     <?php
     include("../ConexionBase/Conexiondb.php");
@@ -28,29 +61,40 @@
     }
     ?>
     <table align="center">
-        <tr>
-            <td colspan="5">
-                <FONT FACE="impact" SIZE=6 COLOR="black">Market Place</FONT>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="../Home.php"><button>Inicio</button></a>
-            </td>
-            <td>
-                <a href="Catalogo.php"><button>Catalogo</button></a>
-            </td>
-            <td>
-                <a href="Reserva.php"><button>Reserva</button></a>
-            </td>
-            <td>
-                <a href="../Registrousuario/registro.php"><button>Inscripción</button></a>
-            </td>
+    <tr>
+                <td colspan="5">
+                    <FONT FACE="Delninoys" SIZE=10 COLOR="black">Market Place</FONT>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <h3>
+                            Bienvenido al sitio web de <strong>MARKETPLACE</strong> en este puede realizar la reserva de diversos productos
+                    </h3>
+                </td>
+                <td>
+                    <a class="boton_login" href="../Registrousuario/index.php">Login</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a class="button" href="../Home.php">Inicio</a>
+                </td>
+                <td>
+                    <a class="button" href="Catalogo.php">Catalogo</a>
+                </td>
+                <td>
+                    <a class="button" href="../Reserva.php">Reserva</a>
+                </td>
+                <td>
+                    <a class="button" href="../Registrousuario/registro.php">Inscripción</a>
+                </td>
 
-            <td>
-                <a href="../Contacto/Contacto.php"><button>Contactenos</button></a>
-            </td>
-        </tr>
+                <td>
+                    <a class="button" href="../Contacto/Contacto.php"> Contactenos</a>
+                </td>
+
+            </tr>
     </table>
     <table>
         <tr>
