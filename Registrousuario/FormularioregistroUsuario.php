@@ -1,120 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de registro</title>
+	<meta charset="utf-8">
+	<title>marketplace</title>
+	<!--llama la hoja de estilos-->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="../Css/estilo.css">
 </head>
+<style type="text/css">
+	.boton_login {
+		text-decoration: none;
+		padding: 5px;
+		font-weight: 600;
+		font-size: 20px;
+		color: #ffffff;
+		background-color: #000000;
+		border-radius: 6px;
+		border: 1px solid #0016b0;
+	}
 
-<body>
-    <?php
-    include("../ConexionBase/Conexiondb.php");
+	.boton_login:hover {
+		color: #000000;
+		background-color: #ffffff;
+	}
 
-    $registros = $conexion_db->query("SELECT * FROM USUARIO")->fetchAll(PDO::FETCH_OBJ);
+	.button {
+		text-decoration: none;
+		padding: 5px;
+		border-radius: 6px;
+		font-weight: 600;
+		font-size: 20px;
+		background-color: white;
+		color: black;
+		border: 2px solid #555555;
+	}
 
-    if (isset($_POST["cr"])) { //si se ha pulsado el botón cr, que es para insertar
-        //el Id, no es necesario traerlo, porque es autonumerico
-        $Nombre = $_POST['nom'];
-        $Apellido = $_POST['ape'];
-        $Correo = $_POST['correo'];
-        $Telefono = $_POST['tel'];
-        $Direccion = $_POST['direc'];
-        $Genero = $_POST['genero'];
-        $FechaNacimiento = $_POST['fechanacim'];
-        $Ciudad = $_POST['cuidad'];
-        $Nacionalidad = $_POST['nacio'];
-        $pass = $_POST['pass'];
-        $rpass = $_POST['rpass'];
-        if ($pass != $rpass) {
-            die('las contaseñas no coinciden, Verifique <br /> <a href="Home.php">Volver</a>');
-        }
-        $SQL = "INSERT INTO USUARIO (NOMBRE, APELLIDO, CORREO, TELEFONO, DIRECCION, GENERO, FECHANACIMIENTO, CIUDAD, NACIONALIDAD) VALUES (:nombre, :descripcion, :foto, :fecha, :capacidad,:precio)";
-        $Resultado = $conexion_db->prepare($SQL);
-        $Resultado->execute(array(":nom" => $Nombre, ":ape" => $Apellido, ":correo" => $Correo, ":tel" => $Telefono, ":direc" => $Direccion, ":genero" => $Genero, ":fechanacim"=> $FechaNacimiento, ":ciudad"=> $Ciudad,":nacio"=>$Nacionalidad));
-        header("Location:FormularioregistroUsuario.php");
-    }
+	.button:hover {
+		background-color: #555555;
+		color: white;
+	}
+</style>
 
-    ?>
-    <h1>FORMULARIO DE REGISTRO DE USUARIO</h1>
+<body>	
+	<table align="center">
+		<tr>
+			<td colspan="5">
+				<FONT FACE="Delninoys" SIZE=10 COLOR="black">Market Place</FONT>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<h3>
+					Bienvenido al sitio web de <strong>MARKETPLACE</strong> en este puede realizar la reserva de diversos productos
+				</h3>
+			</td>
+			<td>
+				<a class="boton_login" href="../Registrousuario/index.php">Login</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a class="button" href="../Home.php">Inicio</a>
+			</td>
+			<td>
+				<a class="button" href="../Catalogo/Catalogo.php">Catalogo</a>
+			</td>
+			<td>
+				<a class="button" href="../Reserva.php">Reserva</a>
+			</td>
+			<td>
+				<a class="button" href="registro.php">Inscripción</a>
+			</td>
 
-    <Form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+			<td>
+				<a class="button" href="../Contacto/Contacto.php"> Contactenos</a>
+			</td>
 
-        <table width="50%" border="0" align="center">
-            <tr>
-                <!--TR crea las filas en la tabla-->
-                <td class="primera_fila">Id</td>
-                <!--TD maneja las columnas de la tabla-->
-                <td class="primera_fila">Nombre</td>
-                <td class="primera_fila">Apellido</td>
-                <td class="primera_fila">Correo</td>
-                <td class="primera_fila">Telefono</td>
-                <td class="primera_fila">Direccion</td>
-                <td class="primera_fila">Genero</td>
-                <td class="primera_fila">Fecha Nacimiento</td>
-                <td class="primera_fila">Ciudad</td>
-                <td class="primera_fila">Nacionalidad</td>
+		</tr>
+	</table>
+	
+	<center>
+		<h1>FORMULARIO DE REGISTRO USUARIO</h1>
+	</center>
+	<Form action="<?php echo $_SERVER['PHP_SELF']; ?> " method="post">
+		<table width="50%" border="0" align="center">
+			<tr>
+				<td>Nombre: </td>
+				<td><input type='text' name='nom' size='45' class='centrado' required></td>
+			</tr>
+			<tr>
+				<td>Apellido:</td>
+				<td><input type='text' name='ape' size='45' class='centrado' required></td>
+			</tr>
+			<tr>
+				<td>Correo: </td>
+				<td><input type='email' name='correo' size='45' class='centrado' required></td>
+			</tr>
+			<tr>
+				<td>Telefono: </td>
+				<td><input type='tel' name='tel' size='30' class='centrado' required></td>
+			</tr>
+			<tr>
+				<td>Dirección: </td>
+				<td><input type='text' name='direc' size='45' class='centrado' required></td>
+			</tr>
+			<tr>
+				<td>Genero: </td>
+				<!--<td><input type='text' name='genero' size='30' class='centrado' required></td>-->
+				<td><select name="genero" class='centrado' required>
+						<option selected value="0"> Elige una opción </option>
+						<option value="1">masculino</option>
+						<option value="2">femenino</option>
+					</select></td>
+			</tr>
+			<tr>
+				<td>Fecha Nacimiento: </td>
+				<!--<td><input type='text' name='fechanacim' size='30' class='centrado' required></td>-->
+				<td><input type='date' name='fechanacim' size='45' class='centrado' required></td>
+			</tr>
+			<tr>
+				<td>Ciudad: </td>
+				<td><input type='text' name='ciudad' size='45' class='centrado' required></td>
+			</tr>
+			<tr>
+				<td>Nacionalidad: </td>
+				<td><input type='text' name='nacio' size='45' class='centrado' required></td>
+			</tr>
+			<tr>
+				<td>Contraseña: </td>
+				<td><input type='password' name='pass' size='16' class='centrado'></td>
+			</tr>
+			<tr>
+				<td>Repite Contraseña: </td>
+				<td><input type='password' name='rpass' size='16' class='centrado' require></td>
+			</tr>
+			<tr>
+				<td class='bot' colspan="2">
+					<center><input class="button" type='submit' name='cr' id='cr' value='Enviar' required></center>
+				</td>
 
-
-                <td class="sin">&nbsp;</td>
-                <td class="sin">&nbsp;</td>
-                <td class="sin">&nbsp;</td>
-            </tr>
-
-            <!-- filas que requiero repetir n veces, conforme el número de registros de la BD-->
-            <?php
-            foreach ($registros as $usuario) : ?>
-                <tr>
-
-                    <td><?php echo $usuario->idUsuario ?></td>
-                    <td><?php echo $usuario->Nombre ?></td>
-                    <td><?php echo $usuario->Apellido ?></td>
-                    <td><?php echo $usuario->Correo ?></td>
-                    <td><?php echo $usuario->Telefono ?></td>
-                    <td><?php echo $usuario->Direccion ?></td>
-                    <td><?php echo $usuario->Genero ?></td>
-                    <td><?php echo $usuario->FechaNacimiento ?></td>
-                    <td><?php echo $usuario->Ciudad ?></td>
-                    <td><?php echo $usuario->Nacionalidad ?></td>
-
-                    <!--Con el boton borrar,  llamar el archivo Borrar_Registro y le paso el Id a eliminar
-  despues de llamar la pagina Borrar_Registro.php, agrego un ? y el nombre del parametro
-  ademas de eso no puedo decirle que el ?Id=3, porque siempre me estaría refiriendo al registro 3
-  lo que debo hacer es insertar un código PHP, para pasarle ese parametro dinamicamente, es decir el Id 
-  del objeto que el bucle foreach este evaluando en el momento, del botón que se haya oprimido-->
-                    <td class="bot"><a href="Borrar_Registro.php?Id=<?php echo $usuario->idUsuario ?>">
-                            <input type='button' name='del' id='del' value='Borrar'></a></td>
-
-
-                    <!--Con el boton borrar,  llamar el archivo Borrar_Registro y le paso el Id a eliminar
-  despues de llamar la pagina Borrar_Registro.php, agrego un ? y el nombre del parametro-->
-
-                    <td class='bot'><a href="Update_Registro.php?Id=<?php echo $usuario->Id ?> & nom=<?php echo $usuario->Nombre ?> 
-                   & desc=<?php echo $usuario->Descripcion ?> & fot=<?php echo $usuario->Foto ?>&fech=<?php echo $usuario->Fecha ?> &cap=<?php echo $usuario->Capacidad ?> &prec=<?php echo $usuario->Precio ?>">
-                            <input type='button' name='up' id='up' value='Actualizar'></a></td>
-                </tr> <!-- finaliza la primera fila-->
-            <?php
-            endforeach;
-            ?>
-
-            <tr>
-                <td></td>
-                <td><input type='text' name='nom' size='10' class='centrado'></td>
-                <td><input type='text' name='desc' size='10' class='centrado'></td>
-                <td><input type='text' name='fot' size='10' class='centrado'></td>
-                <td><input type='text' name='fech' size='10' class='centrado'></td>
-                <td><input type='text' name='cap' size='10' class='centrado'></td>
-                <td><input type='text' name='prec' size='10' class='centrado'></td>
-                <td><input type='text' name='prec' size='10' class='centrado'></td>
-                <td><input type='text' name='prec' size='10' class='centrado'></td>
-                <td><input type='text' name='prec' size='10' class='centrado'></td>
-                <!--este bóton insertar es de tipo submit, para que envié la info a la BD-->
-                <td class='bot'><input type='submit' name='cr' id='cr' value='Insertar'></td>
-            </tr>
-        </table>
-    </Form>
-    <center><a href="../Home.php"><button style='width:100px; height:50px'>INICIO</button></a></center>
-    <p>&nbsp;</p>
+			</tr>
+			<?php
+		if(isset($_POST['submit'])){
+			require("registro.php");
+		}
+	?>
+		</table>
+	</Form>
 </body>
 
 </html>
