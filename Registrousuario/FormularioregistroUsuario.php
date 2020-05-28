@@ -43,7 +43,7 @@
 	}
 </style>
 
-<body>	
+<body>
 	<table align="center">
 		<tr>
 			<td colspan="5">
@@ -71,7 +71,7 @@
 				<a class="button" href="../Reserva.php">Reserva</a>
 			</td>
 			<td>
-				<a class="button" href="registro.php">Inscripción</a>
+				<a class="button" href="FormularioregistroUsuario.php">Inscripción</a>
 			</td>
 
 			<td>
@@ -80,10 +80,32 @@
 
 		</tr>
 	</table>
-	
+
 	<center>
 		<h1>FORMULARIO DE REGISTRO USUARIO</h1>
 	</center>
+	<?php
+	include("../ConexionBase/Conexiondb.php");
+	$registros = $conexion_db->query("SELECT * FROM USUARIO")->fetchAll(PDO::FETCH_OBJ);
+	if (isset($_POST["cr"])) { //si se ha pulsado el botón cr, que es para insertar
+		//el Id, no es necesario traerlo, porque es autonumerico
+		$nombre = $_POST["nom"];
+		$apellido = $_POST["ape"];
+		$correo = $_POST["correo"];
+		$telefono = $_POST["tel"];
+		$direccion = $_POST["direc"];
+		$genero = $_POST["genero"];
+		$fechanacio = $_POST["fechanacim"];
+		$ciudad = $_POST["ciudad"];
+		$nacionalidad = $_POST["nacio"];
+		$pass = $_POST["pass"];
+		$rpass = $_POST["rpass"];
+		$SQL = "INSERT INTO USUARIO (NOMBRE, APELLIDO, CORREO, TELEFONO, DIRECCION, GENERO, FECHANACIMIENTO, CIUDAD, NACIONALIDAD, CONTRASENA, CONTRASENAREPETIDA) VALUES (:nombre, :apellido, :correo, :telefono, :direccion, :genero, :fechanacimiento, :ciudad, :nacionalidad, :pass, :rpass)";
+		$Resultado = $conexion_db->prepare($SQL);
+		$Resultado->execute(array(":nombre" => $nombre, ":apellido" => $apellido, ":correo" => $correo, ":telefono" => $telefono, ":direccion" => $direccion, ":genero" => $genero, ":fechanacimiento" => $fechanacio, ":ciudad" => $ciudad, ":nacionalidad" => $nacionalidad, ":pass" => $pass, ":rpass" => $rpass));
+		header("Location:FormularioregistroUsuario.php");
+	}
+	?>
 	<Form action="<?php echo $_SERVER['PHP_SELF']; ?> " method="post">
 		<table width="50%" border="0" align="center">
 			<tr>
@@ -118,15 +140,15 @@
 			<tr>
 				<td>Fecha Nacimiento: </td>
 				<!--<td><input type='text' name='fechanacim' size='30' class='centrado' required></td>-->
-				<td><input type='date' name='fechanacim' size='45' class='centrado' required></td>
+				<td><input type='date' name='fechanacim' size='30' class='centrado' required></td>
 			</tr>
 			<tr>
 				<td>Ciudad: </td>
-				<td><input type='text' name='ciudad' size='45' class='centrado' required></td>
+				<td><input type='text' name='ciudad' size='30' class='centrado' required></td>
 			</tr>
 			<tr>
 				<td>Nacionalidad: </td>
-				<td><input type='text' name='nacio' size='45' class='centrado' required></td>
+				<td><input type='text' name='nacio' size='30' class='centrado' required></td>
 			</tr>
 			<tr>
 				<td>Contraseña: </td>
@@ -140,13 +162,7 @@
 				<td class='bot' colspan="2">
 					<center><input class="button" type='submit' name='cr' id='cr' value='Enviar' required></center>
 				</td>
-
 			</tr>
-			<?php
-		if(isset($_POST['submit'])){
-			require("registro.php");
-		}
-	?>
 		</table>
 	</Form>
 </body>

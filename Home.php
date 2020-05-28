@@ -71,7 +71,7 @@
                     <a class="button" href="reservas/formulario.php">Reserva</a>
                 </td>
                 <td>
-                    <a class="button" href="Registrousuario/FormularioUsers.php">Inscripción</a>
+                    <a class="button" href="Registrousuario/FormularioregistroUsuario.php">Inscripción</a>
                 </td>
 
                 <td>

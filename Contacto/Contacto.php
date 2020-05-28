@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,12 +17,10 @@
         border-radius: 6px;
         border: 1px solid #0016b0;
     }
-
     .boton_login:hover {
         color: #000000;
         background-color: #ffffff;
     }
-
     .button {
         text-decoration: none;
         padding: 5px;
@@ -34,13 +31,11 @@
         color: black;
         border: 2px solid #555555;
     }
-
     .button:hover {
         background-color: #555555;
         color: white;
     }
 </style>
-
 <body>
     <center>
         <table width="950">
@@ -70,17 +65,15 @@
 				<a class="button" href="../Reserva.php">Reserva</a>
 			</td>
 			<td>
-				<a class="button" href="../Registrousuario/registro.php">Inscripción</a>
+				<a class="button" href="../Registrousuario/FormularioregistroUsuario.php">Inscripción</a>
 			</td>
 
 			<td>
 				<a class="button" href="Contacto.php"> Contactenos</a>
 			</td>
-
 		</tr>
             <tr>
                 <td colspan="5">
-
                     <center>
                         <p>
                             <h1>
@@ -95,7 +88,6 @@
                                 o al celular 3024931313
                         </p>
                         </h3>
-
                         <center>
                             <br> para cualquier inquietud escribir a los siguientes email: <br>
                             <a href="mailto:info@website.com"> elitedavid243@gmail.com</a>
@@ -108,8 +100,6 @@
             </tr>
         </table>
         <br>
-
     </center>
 </body>
-
 </html>

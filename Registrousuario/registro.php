@@ -11,18 +11,19 @@
     $pass = $_POST['pass'];
     $rpass = $_POST['rpass'];
 
-    requiere("Conexiondb.php");
+    require("../ConexionBase/Conexiondb.php");
     $checkemail=mysqli_query($mysqli,"SELECT * FROM usuarios WHERE email='$mail'");
     $check_mail=mysqli_num_rows($checkemail);
     if($pass==$rpass){
         if($check_mail>0){
             echo ' <script language="javascript">alert("Atencion, ya existe el mail designado para un usuario, verifique sus datos");</script> ';
         }else{
-            mysqli_query($mysqli,"INSERT INTO usuarios VALUES('','$Nombre','$Apellido','$Correo','$Telefono','$Direccion','$Genero','$FechaNacimiento','$Genero','$FechaNacimiento','$Ciudad','$Nacionalidad','$pass)");
+            mysqli_query($mysqli,"INSERT INTO usuarios VALUES('','$Nombre','$Apellido','$Correo','$Telefono','$Direccion','$Genero','$FechaNacimiento','$Ciudad','$Nacionalidad','$pass','$rpass')");
 				//echo 'Se ha registrado con exito';
 				echo ' <script language="javascript">alert("Usuario registrado con éxito");</script> ';
 				
-        }else{
+        }
+    }else{
 			echo 'Las contraseñas son incorrectas';
 		}
 

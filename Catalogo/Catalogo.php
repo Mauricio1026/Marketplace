@@ -69,7 +69,7 @@
             <tr>
                 <td colspan="4">
                     <h3>
-                            Bienvenido al sitio web de <strong>MARKETPLACE</strong> en este puede realizar la reserva de diversos productos
+                        Bienvenido al sitio web de <strong>MARKETPLACE</strong> en este puede realizar la reserva de diversos productos
                     </h3>
                 </td>
                 <td>
@@ -87,9 +87,8 @@
                     <a class="button" href="../Reserva.php">Reserva</a>
                 </td>
                 <td>
-                    <a class="button" href="../Registrousuario/registro.php">Inscripción</a>
+                    <a class="button" href="../Registrousuario/FormularioregistroUsuario.php">Inscripción</a>
                 </td>
-
                 <td>
                     <a class="button" href="../Contacto/Contacto.php"> Contactenos</a>
                 </td>
