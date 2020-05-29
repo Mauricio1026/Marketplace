@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="./Marketplace/Css/estilo.css">
     <title>MarketPlace</title>
 </head>
 <style type="text/css">
@@ -39,7 +39,6 @@
         background-color: #555555;
         color: white;
     }
-
 </style>
 
 <body>
@@ -53,11 +52,11 @@
             <tr>
                 <td colspan="4">
                     <h3>
-                            Bienvenido al sitio web de <strong>MARKETPLACE</strong> en este puede realizar la reserva de diversos productos
+                        Bienvenido al sitio web de <strong>MARKETPLACE</strong> en este puede realizar la reserva de diversos productos
                     </h3>
                 </td>
                 <td>
-                    <a class="boton_login" href="Registrousuario/index.php">Login</a>
+                    <a class="boton_login" href="../index.php">Login</a>
                 </td>
             </tr>
             <tr>
@@ -65,17 +64,17 @@
                     <a class="button" href="Home.php">Inicio</a>
                 </td>
                 <td>
-                    <a class="button" href="Catalogo/Catalogo.php">Catalogo</a>
+                    <a class="button" href="../Catalogo/Catalogo.php">Catalogo</a>
                 </td>
                 <td>
-                    <a class="button" href="reservas/formulario.php">Reserva</a>
+                    <a class="button" href="../reservas/formulario.php">Reserva</a>
                 </td>
                 <td>
-                    <a class="button" href="Registrousuario/FormularioregistroUsuario.php">Inscripción</a>
+                    <a class="button" href="../Registrousuario/FormularioregistroUsuario.php">Inscripción</a>
                 </td>
 
                 <td>
-                    <a class="button" href="Contacto/Contacto.php"> Contactenos</a>
+                    <a class="button" href="../Contacto/Contacto.php"> Contactenos</a>
                 </td>
 
             </tr>

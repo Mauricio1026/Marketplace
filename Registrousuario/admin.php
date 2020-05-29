@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <?php
 session_start();
-if (@!$_SESSION['user']) {
-	header("Location:index.php");
-} elseif ($_SESSION['rol'] == 2) {
-	header("Location:index2.php");
+if (@!$_SESSION['Nombre']) {
+	header("Location:Home.php");
+} elseif ($_SESSION['rol']==2) {
+	header("Location:usuario.php");
 }
 ?>
 <html lang="en">
@@ -14,7 +14,7 @@ if (@!$_SESSION['user']) {
 	<title>Login Administrador</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body data-offset="40" background="images/fondotot.jpg" style="background-attachment: fixed">
 	<div class="container">
@@ -26,12 +26,12 @@ if (@!$_SESSION['user']) {
 				<div class="container">
 					<div class="nav-collapse">
 						<ul class="nav">
-							<li class=""><a href="admin.php">Inicio</a></li>
+							<li class=""><a href="Home.php">Inicio</a></li>
 						</ul>
 						<form action="#" class="navbar-search form-inline" style="margin-top:6px">
 						</form>
 						<ul class="nav pull-right">
-							<li><a href="">Bienvenido <strong><?php echo $_SESSION['user']; ?></strong> </a></li>
+							<li><a href="">Bienvenido <strong><?php echo $_SESSION['Nombre']; ?></strong> </a></li>
 							<li><a href="desconectar.php"> Cerrar Cesión </a></li>
 						</ul>
 					</div>
@@ -44,19 +44,19 @@ if (@!$_SESSION['user']) {
 					<h2> Administración de usuarios registrados</h2>
 					<div class="well well-small">
 						<hr class="soft" />
-						<h4>Tabla de Usuarios</h4>
+						<h4>Tabla de Administradores</h4>
 						<div class="row-fluid">
 							<?php
-							require("../ConexionBase/Conexiondb.php");
-							$sql = ("SELECT * FROM login");
+							require("../ConexionBase/connect_db.php");
+							$sql = ("SELECT * FROM ADMINISTRADOR");
 							$query = mysqli_query($mysqli, $sql);
 							echo "<table border='1'; class='table table-hover';>";
 							echo "<tr class='warning'>";
 							echo "<td>Id</td>";
-							echo "<td>Usuario</td>";
-							echo "<td>Password</td>";
+							echo "<td>Nombre</td>";
 							echo "<td>Correo</td>";
-							echo "<td>Password del administrador</td>";
+							echo "<td>Telefono</td>";
+							echo "<td>Cargo</td>";
 							echo "<td>Editar</td>";
 							echo "<td>Borrar</td>";
 							echo "</tr>";

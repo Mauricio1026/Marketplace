@@ -56,7 +56,7 @@
 		</tr>
 		<tr>
 			<td>
-				<a class="button" href="../Home.php">Inicio</a>
+				<a class="button" href="../Registrousuario/Home.php">Inicio</a>
 			</td>
 			<td>
 				<a class="button" href="../Catalogo/Catalogo.php">Catalogo</a>
