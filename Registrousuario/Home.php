@@ -56,7 +56,7 @@
                     </h3>
                 </td>
                 <td>
-                    <a class="boton_login" href="../index.php">Login</a>
+                <a class="boton_login" href="../Registrousuario/desconectar.php">Cerrar Sesión</a>
                 </td>
             </tr>
             <tr>
@@ -67,7 +67,7 @@
                     <a class="button" href="../Catalogo/Catalogo.php">Catalogo</a>
                 </td>
                 <td>
-                    <a class="button" href="../reservas/formulario.php">Reserva</a>
+                    <a class="button" href="../reservas/Reserva.php">Reserva</a>
                 </td>
                 <td>
                     <a class="button" href="../Registrousuario/FormularioregistroUsuario.php">Inscripción</a>

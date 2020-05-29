@@ -57,7 +57,7 @@
 				</h3>
 			</td>
 			<td>
-				<a class="boton_login" href="../Registrousuario/index.php">Login</a>
+			<a class="boton_login" href="../Registrousuario/desconectar.php">Cerrar Sesión</a>
 			</td>
 		</tr>
 		<tr>

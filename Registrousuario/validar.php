@@ -7,6 +7,7 @@ $sql2 = mysqli_query($mysqli, "SELECT * FROM ADMINISTRADOR WHERE CORREO ='$email
 if ($f2 = mysqli_fetch_assoc($sql2)) {
 	if ($pass == $f2['Contrasenaadmin']) {
 		$_SESSION['idAdministrador'] = $f2['idAdministrador'];
+		$_SESSION['Nombre'] = $f2['Nombre'];
         $_SESSION['Cargo'] = $f2['Cargo'];
         $_SESSION['rol'] = $f2['rol'];
 		echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';

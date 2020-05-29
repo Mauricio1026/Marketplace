@@ -4,27 +4,27 @@
 
 <head>
 
-<meta charset=’utf-8′>
+    <meta charset='utf-8'>
 
 </head>
 
 <body>
 
-<form id=»buscador» name=»buscador» method=»post» action=»<?php echo $conexion_db['PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ'] ?>»>
+    <form id=»buscador» name=»buscador» method=»post» action=»<?php echo $conexion_db['PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ'] ?>»>
 
-<input id=»buscar» name=»buscar» type=»search» placeholder=»Buscar aquí…» autofocus >
+        <input id=»buscar» name=»buscar» type=»search» placeholder=»Buscar aquí…» autofocus>
 
-<input type=»submit» name=»buscador» class=»boton peque aceptar» value=»buscar»>
+        <input type=»submit» name=»buscador» class=»boton peque aceptar» value=»buscar»>
 
-</form>
+    </form>
 
-<?php
+    <?php
 
-// Resultado, número de registros y contenido.
+    // Resultado, número de registros y contenido.
 
-echo Catalogo;
+    echo 'Catalogo';
 
-?>
+    ?>
 
 </body>
 

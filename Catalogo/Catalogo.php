@@ -73,7 +73,7 @@
                     </h3>
                 </td>
                 <td>
-                    <a class="boton_login" href="../Registrousuario/index.php">Login</a>
+                    <a class="boton_login" href="../Registrousuario/desconectar.php">Cerrar Sesión</a>
                 </td>
             </tr>
             <tr>
@@ -121,25 +121,12 @@
                                 <td><?php echo $usuario->Fecha ?></td>
                                 <td><?php echo $usuario->Capacidad ?></td>
                                 <td><?php echo $usuario->Precio ?></td>
-                                <td class="bot"><a href="Borrar_Registro.php?Id=<?php echo $usuario->idCatalogo ?>">
-                                        <input type='button' name='del' id='del' value='Borrar'></a></td>
-                                <td class='bot'><a href="Update_Registro.php?Id=<?php echo $usuario->Id ?> & nom=<?php echo $usuario->Nombre ?> 
-                       & desc=<?php echo $usuario->Descripcion ?> & fot=<?php echo $usuario->Foto ?>&fech=<?php echo $usuario->Fecha ?> &cap=<?php echo $usuario->Capacidad ?> &prec=<?php echo $usuario->Precio ?>">
-                                        <input type='button' name='up' id='up' value='Actualizar'></a></td>
+
                             </tr>
                         <?php
                         endforeach;
                         ?>
-                        <tr>
-                            <td></td>
-                            <td><input type='text' name='nom' size='10' class='centrado'></td>
-                            <td><input type='text' name='desc' size='10' class='centrado'></td>
-                            <td><input type='text' name='fot' size='10' class='centrado'></td>
-                            <td><input type='text' name='fech' size='10' class='centrado'></td>
-                            <td><input type='text' name='cap' size='10' class='centrado'></td>
-                            <td><input type='text' name='prec' size='10' class='centrado'></td>
-                            <td class='bot'><input type='submit' name='cr' id='cr' value='Insertar'></td>
-                        </tr>
+
                     </table>
                 </Form>
             </td>

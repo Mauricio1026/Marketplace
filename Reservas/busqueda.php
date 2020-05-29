@@ -10,7 +10,7 @@ $registros = »;
 
 if($_POST){
 
-$busqueda = trim($_POST[‘buscar’]);
+$busqueda = trim($_POST['buscar']);
 
 $entero = 0;
 
@@ -24,13 +24,13 @@ $texto = "Búsqueda sin resultados";
 
 conectar();
 
-mysql_set_charset(‘utf8’);
+mysql_set_charset('utf8');
 
 // mostramos la información en utf-8
 
 //Contulta para la base de datos, se utiliza un comparador LIKE para acceder a todo lo que contenga la cadena a buscar
 
-$sql = «SELECT * FROM catalogo WHERE provincia LIKE ‘%» .$busqueda. «%’ ORDER BY provincia»;
+$sql = «SELECT * FROM catalogo WHERE nombre LIKE '%» .$busqueda. «%' ORDER BY nombre»;
 
 $resultado = mysql_query($sql); //Ejecución de la consulta
 
@@ -40,13 +40,13 @@ if (mysql_num_rows($resultado) > 0){
 
 // Se recoge el número de resultados
 
-$registros = ‘<p>HEMOS ENCONTRADO ‘ . mysql_num_rows($resultado) . ‘ registros </p>’;
+$registros = '<p>HEMOS ENCONTRADO ' . mysql_num_rows($resultado) . ' registros </p>';
 
 // Se almacenan las cadenas de resultado
 
 while($fila = mysql_fetch_assoc($resultado)){
 
-$texto .= $fila[‘provincia’] . ‘<br />’;
+$texto .= $fila['provincia'] . '<br />';
 
 }
 
