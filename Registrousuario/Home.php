@@ -67,7 +67,7 @@
                     <a class="button" href="../Catalogo/Catalogo.php">Catalogo</a>
                 </td>
                 <td>
-                    <a class="button" href="../reservas/Reserva.php">Reserva</a>
+                    <a class="button" href="../reservas/FormuReserva.php">Reserva</a>
                 </td>
                 <td>
                     <a class="button" href="../Registrousuario/FormularioregistroUsuario.php">Inscripción</a>
